@@ -1,0 +1,9 @@
+---
+- name: Create Folder on Local Machine
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Create Folder
+      file:
+        path: C:/Users/emir.kandemir/Documents/AnsibleHelloWorld/emirkandemir
+        state: directory
