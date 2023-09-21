@@ -5,5 +5,5 @@
   tasks:
     - name: Create Folder
       file:
-        path: /home/playbooktest
+        path: /home/emirkandemir/playbooktest.txt
         state: touch
