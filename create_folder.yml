@@ -5,5 +5,5 @@
   tasks:
     - name: Create Folder
       file:
-        path: C:/Users/emir.kandemir/Documents/AnsibleHelloWorld/emirkandemir
-        state: directory
+        path: /home/playbooktest
+        state: touch
