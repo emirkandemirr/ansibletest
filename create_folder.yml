@@ -1,9 +1,4 @@
----
-- name: Create Folder on Local Machine
-  hosts: localhost
-  gather_facts: false
-  tasks:
-    - name: Create Folder
-      file:
-        path: /home/emirkandemir/playbooktest.txt
-        state: touch
+- name: "Ansible | Creating an empty file"
+  file:
+    path: "/home/emirkandemir/"
+    state: touch
