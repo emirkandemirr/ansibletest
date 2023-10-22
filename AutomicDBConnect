@@ -1,0 +1,20 @@
+---
+- name: MSSQL Connect
+  hosts: localhost
+  tasks:
+    - name: MSSQL Bilgileri
+      set_fact:
+        sql_server_host: "server_ip_or_hostname"
+        sql_server_port: "1433"
+        sql_server_database: "your_database_name"
+        sql_server_username: "your_username"
+        sql_server_password: "your_password"
+
+    - name: MSSQL Connect
+      mssql_db:
+        server: "{{ sql_server_host }}"
+        port: "{{ sql_server_port }}"
+        database: "{{ sql_server_database }}"
+        state: present
+        login_user: "{{ sql_server_username }}"
+        login_password: "{{ sql_server_password }}"

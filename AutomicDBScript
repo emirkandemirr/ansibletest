@@ -1,0 +1,10 @@
+---
+- name: DB Script Run
+  hosts: all
+  tasks:
+    - name: DB Create Script
+      shell: |
+        sqlcmd -S {{ sql_server_host }} -U {{ sql_server_username }} -P{{ sql_server_password }} -d automic -i /path/to/your/script.sql
+      args:
+        executable: /bin/bash
+      become: yes

@@ -1,4 +1,0 @@
-- name: "Ansible | Creating an empty file"
-  file:
-    path: "/home/emirkandemir/"
-    state: touch

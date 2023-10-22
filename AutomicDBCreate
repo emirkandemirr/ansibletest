@@ -1,0 +1,4 @@
+- name: Create a new database with name 'jackdata'
+  community.general.mssql_db:
+    name: automic
+    state: present

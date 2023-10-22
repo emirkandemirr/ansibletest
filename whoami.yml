@@ -1,5 +1,0 @@
----
-- hosts: all
-  tasks:
-  - name: Print whoami output
-    command: ifconfig
