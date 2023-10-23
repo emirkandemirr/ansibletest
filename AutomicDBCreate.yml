@@ -1,5 +1,5 @@
 ---
-- name: Create a new database with name 'jackdata'
+- name: Create a new database with name 'automic'
   hosts: all
   tasks:
     community.general.mssql_db:
