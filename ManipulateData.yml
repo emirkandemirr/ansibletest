@@ -4,10 +4,9 @@
     vars:
       new_driverConnect: 'denemedeneme'
 
-
     tasks:
       - name: Configure AutomationEngine .ini
         ansible.builtin.lineinfile
           path: C:/Automic/AutomationEngine/bin/ucsrv.ini
           regexp: '^sqlDriverConnect='
-          line: sqlDriverConnect={{newnew_driverConnect}} 
+          line: sqlDriverConnect={{new_driverConnect}} 
