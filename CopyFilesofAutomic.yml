@@ -1,0 +1,21 @@
+---
+- name: CopyFiles
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: CopyAutomationEngine
+      synchronize:
+        src: C:/Automic.Automation_12.3.9_2022-08-03/Automation.Platform/AutomationEngine/windows/x64
+        dest: C:/Automic/AutomationEngine
+    - name: CopyServiceManager
+      synchronize:
+        src: C:/Automic.Automation_12.3.9_2022-08-03/Automation.Platform/ServiceManager/windows/x64
+        dest: C:/Automic/ServiceManager
+    - name: CopyServiceManagerDialog
+      synchronize:
+        src: C:/Automic.Automation_12.3.9_2022-08-03/Automation.Platform/ServiceManagerDialog/windows/x64
+        dest: C:/Automic/ServiceManagerDialog
+    
+        
+      

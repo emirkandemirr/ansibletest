@@ -3,32 +3,26 @@
   hosts: all
   tasks:
     - name: Automic Klasörünü Oluştur
-      ansible.builtin.file
       file:
         path: C:/Automic
         state: directory
     - name: Agents Klasörünü Oluştur
-      ansible.builtin.file
       file:
         path: C:/Automic/Agent
         state: directory
     - name: AutomationEngine Klasörünü Oluştur
-      ansible.builtin.file
       file:
         path: C:/Automic/AutomationEngine
         state: directory
     - name: ServiceManager Klasörünü Oluştur
-      ansible.builtin.file
       file:
         path: C:/Automic/ServiceManager
         state: directory
     - name: ServiceManagerDialog Klasörünü Oluştur.
-      ansible.builtin.file
       file:
         path: C:/Automic/ServiceManagerDialog
         state: directory
     - name: Utility Klasörünü Oluştur
-      ansible.builtin.file
       file:
         path: C:/Automic/Utility
         state: directory
@@ -40,7 +34,6 @@
           - ServiceManagerDialog
           - Utility
     - name: Temp oluştur
-      ansible.builtin.file
       file:
         path: C:/Automic/{{ item }}/Temp
         state: directory
@@ -48,7 +41,6 @@
       loop_control:
         loop_var: item
     - name: bin oluştur
-      ansible.builtin.file
       file:
         path: C:/Automic/{{ item }}/bin
         state: directory
@@ -56,7 +48,6 @@
       loop_control:
         loop_var: item
     - name: Utility db Klasörünü Oluştur
-      ansible.builtin.file
       file:
         path: C:/Automic/Utility/db
         state: directory
