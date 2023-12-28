@@ -1,0 +1,29 @@
+---
+- name: Copy Files
+  hosts: win
+  tasks:
+    - name: Copy Automation Engine Files
+      win_copy:
+        src: "D:/Automic.Automation/Automation.Platform/AutomationEngine/windows/x64/"
+        dest: "C:/Automic/AutomationEngine/bin"
+        remote_src: yes
+    - name: Copy Service Manager Files
+      win_copy:
+        src: "D:/Automic.Automation/Automation.Platform/ServiceManager/windows/x64/"
+        dest: "C:/Automic/ServiceManager/bin"
+        remote_src: yes
+    - name: Copy Service Manager Dialog Files
+      win_copy:
+        src: "D:/Automic.Automation/Automation.Platform/ServiceManagerDialog/windows/x64/"
+        dest: "C:/Automic/ServiceManagerDialog/bin"
+        remote_src: yes
+    - name: Copy Utility Files
+      win_copy:
+        src: "D:/Automic.Automation/Automation.Platform/Utility/windows/x64/"
+        dest: "C:/Automic/Utility/bin"
+        remote_src: yes
+    - name: Copy DB Files
+      win_copy:
+        src: "D:/Automic.Automation/Automation.Platform/db/"
+        dest: "C:/Automic/Utility/db"
+        remote_src: yes

@@ -1,0 +1,8 @@
+---
+- name: Directory Create
+  hosts: win
+  ansible.windows.win_package:
+    path: C:\temp\7z.exe
+    creates_path: C:\Program Files\7-Zip\7z.exe
+    creates_version: 16.04
+    state: present

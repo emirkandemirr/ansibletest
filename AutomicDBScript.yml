@@ -1,10 +1,10 @@
 ---
 - name: DB Script Run
-  hosts: all
+  hosts: win
   tasks:
     - name: DB Create Script
       shell: |
-        sqlcmd -S {{ sql_server_host }} -U {{ sql_server_username }} -P{{ sql_server_password }} -d automic -i /path/to/your/script.sql
+        sqlcmd -S 192.168.1.1 -U automic -P Asd123qss! -d automic -i /path/to/your/script.sql
       args:
         executable: /bin/bash
       become: yes

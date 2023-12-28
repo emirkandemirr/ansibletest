@@ -1,0 +1,14 @@
+---
+- name : Install Apache
+  hosts: win
+  tasks:
+    - name : Download Apache 
+      win_get_url:
+        url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.95/bin/apache-tomcat-8.5.95-windows-x64.zip
+        dest: "D:/apache.zip"
+    - name : Unzip Apache 
+      win_unzip:
+        url: "D:/apache.zip"
+        dest: "D:/apache"
+    - name: Remove ZIP file
+      win_shell: Remove-Item "D:/apache.zip" -Force

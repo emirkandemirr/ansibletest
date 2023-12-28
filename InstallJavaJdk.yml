@@ -1,0 +1,15 @@
+---
+- name : Install JDK
+  hosts: win
+  tasks:
+    - name : Download JDK 
+      win_get_url:
+        url: https://download.oracle.com/java/19/archive/jdk-19.0.2_windows-x64_bin.zip
+        dest: "D:/jdk.zip"
+    - name : Unzip Apache 
+      win_unzip:
+        url: "D:/jdk.zip"
+        dest: "D:/jdk"
+    - name: Remove ZIP file
+      win_shell: Remove-Item "D:/jdk.zip" -Force
+

@@ -1,0 +1,6 @@
+- name: Set an environment
+  ansible.windows.win_environment:
+    state: present
+    name: Utility
+    value: Utility/bin
+    level: machine

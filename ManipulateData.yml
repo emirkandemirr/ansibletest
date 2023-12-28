@@ -1,12 +1,28 @@
 ---
-  - name: Configuring .ini File
-    hosts: all
-    vars:
-      new_driverConnect: 'denemedeneme'
+- name: Update INI File
+  hosts: win
+  tasks:
+    - name: Update System= Value in INI File
+      win_lineinfile:
+        path: "C:/Automic/AutomationEngine/bin/ucsrv.ini"
+        regexp: '^system='
+        line: 'system=emir'
+    - name: Update cp= Value in INI File
+      win_lineinfile:
+        path: "C:/Automic/AutomationEngine/bin/ucsrv.ini"
+        regexp: '^cp='
+        line: 'cp=emir'
+    - name: Update jdbc Value in INI File
+      win_lineinfile:
+        path: "C:/Automic/AutomationEngine/bin/ucsrv.ini"
+        regexp: '^sqlDriverConnect=jdbc:'
+        line: 'sqlDriverConnect=jdbc:kandemir'
+    - name: Update ODBCVAR Value in INI File
+      win_lineinfile:
+        path: "C:/Automic/Utility/bin/ucybdbld.ini"
+        regexp: '^sqlDriverConnect=ODBCVAR='
+        line: 'ssqlDriverConnect=ODBCVAR=denemedeneme'
 
-    tasks:
-      - name: Configure AutomationEngine .ini
-        ansible.builtin.lineinfile
-          path: C:/Automic/AutomationEngine/bin/ucsrv.ini
-          regexp: '^sqlDriverConnect='
-          line: sqlDriverConnect={{new_driverConnect}} 
+
+      
+      

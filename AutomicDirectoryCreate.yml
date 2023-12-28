@@ -1,54 +1,53 @@
 ---
-- name: Automic Klasör Oluşturma
-  hosts: all
+- name: Directory Create
+  hosts: win
   tasks:
-    - name: Automic Klasörünü Oluştur
-      file:
-        path: C:/Automic
+    - name: Create directory structure
+      ansible.windows.win_file:
+        path: C:\Automic
         state: directory
     - name: Agents Klasörünü Oluştur
-      file:
-        path: C:/Automic/Agent
+      ansible.windows.win_file:
+        path: C:\Automic\Agent
         state: directory
     - name: AutomationEngine Klasörünü Oluştur
-      file:
-        path: C:/Automic/AutomationEngine
+      ansible.windows.win_file:
+        path: C:\Automic\AutomationEngine
         state: directory
     - name: ServiceManager Klasörünü Oluştur
-      file:
-        path: C:/Automic/ServiceManager
+      ansible.windows.win_file:
+        path: C:\Automic\ServiceManager
         state: directory
     - name: ServiceManagerDialog Klasörünü Oluştur.
-      file:
-        path: C:/Automic/ServiceManagerDialog
+      ansible.windows.win_file:
+        path: C:\Automic\ServiceManagerDialog
         state: directory
     - name: Utility Klasörünü Oluştur
-      file:
-        path: C:/Automic/Utility
+      ansible.windows.win_file:
+        path: C:\Automic\Utility
         state: directory
     - name: Dizin Listesi
       set_fact:
         directory_listesi:
-          - AutomationEngine
-          - ServiceManager
-          - ServiceManagerDialog
-          - Utility
+          - C:\Automic\AutomationEngine
+          - C:\Automic\ServiceManager
+          - C:\Automic\ServiceManagerDialog
+          - C:\Automic\Utility
     - name: Temp oluştur
-      file:
-        path: C:/Automic/{{ item }}/Temp
+      ansible.windows.win_file:
+        path: "{{ item }}/Temp"
         state: directory
-      loop: "{{directory_listesi:}}"
+      loop: "{{directory_listesi}}"
       loop_control:
         loop_var: item
     - name: bin oluştur
-      file:
-        path: C:/Automic/{{ item }}/bin
+      ansible.windows.win_file:
+        path: "{{ item }}/bin"
         state: directory
-      loop: "{{directory_listesi:}}"
+      loop: "{{directory_listesi}}"
       loop_control:
         loop_var: item
     - name: Utility db Klasörünü Oluştur
-      file:
+      ansible.windows.win_file:
         path: C:/Automic/Utility/db
         state: directory
-        

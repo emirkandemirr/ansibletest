@@ -1,7 +1,7 @@
 ---
 - name: Create a new database with name 'automic'
-  hosts: all
+  hosts: win
   tasks:
-    community.general.mssql_db:
-      name: automic
-      state: present
+  community.general.mssql_db:
+    name: automic
+    state: present
