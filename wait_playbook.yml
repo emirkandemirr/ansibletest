@@ -1,0 +1,8 @@
+---
+- name: Playbooklar Arasi Bekle
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: wait 90s
+      ansible.builtin.pause:
+        seconds: 90
