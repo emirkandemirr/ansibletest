@@ -1,0 +1,8 @@
+---
+- name: Playbooklar Arasi Sleep ile Bekleme Adimi
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Sistemi 120 saniye (2 dakika) boyunca uyut
+      ansible.builtin.command: sleep 120
+      delegate_to: localhost
