@@ -1,8 +1,8 @@
 ---
-- name: Playbooklar Arasi Bekle
+- name: Playbooklar Arasi Bekleme Adimi
   hosts: localhost
   gather_facts: false
   tasks:
-    - name: wait 90s
+    - name: Diger playbooka gecmeden once 60 saniye (1 dakika) bekle
       ansible.builtin.pause:
-        seconds: 90
+        seconds: 60
