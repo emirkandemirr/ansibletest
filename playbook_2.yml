@@ -1,8 +1,8 @@
 ---
-- name: Playbooklar Arasi Bekleme Adimi
+- name: Ikinci Asama Islemleri
   hosts: localhost
   gather_facts: false
   tasks:
-    - name: Diger playbooka gecmeden once 60 saniye bekle
-      ansible.builtin.pause:
-        seconds: 60
+    - name: Ikinci adimi baslat
+      ansible.builtin.debug:
+        msg: "Ikinci playbook basariyla calisti."
