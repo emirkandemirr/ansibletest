@@ -1,8 +1,8 @@
 ---
-- name: Playbooklar Arasi Ping ile Bekleme Adimi
+- name: Birinci Asama Islemleri
   hosts: localhost
   gather_facts: false
   tasks:
-    - name: Localhost'a 60 adet ping atarak yaklasik 1 dakika bekle
-      ansible.builtin.command: ping -c 60 127.0.0.1
-      delegate_to: localhost
+    - name: Ilk adimi baslat
+      ansible.builtin.debug:
+        msg: "Birinci playbook basariyla calisti."
