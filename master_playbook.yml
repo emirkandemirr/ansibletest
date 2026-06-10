@@ -1,9 +1,4 @@
 ---
-- name: Birinci asamayi calistir
-  import_playbook: playbook_1.yml
-
-- name: Ikinci asamaya gecmeden once bekle
-  import_playbook: wait_playbook.yml
-
-- name: Ikinci asamayi calistir
-  import_playbook: playbook_2.yml
+- import_playbook: playbook_1.yml
+- import_playbook: wait_playbook.yml
+- import_playbook: playbook_2.yml
